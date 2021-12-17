@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    function:
+      definition: rabbitConsumer
+    stream:
+      bindings:
+        rabbitConsumer-in-0:
+          destination: supplierToConsumer
+          group: inputRoutingKey

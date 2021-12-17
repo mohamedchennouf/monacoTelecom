@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  monaco-telecom-service:
+    container_name: monaco-telecom-service
+    image: monaco-service-docker
+    network_mode: "host"
+
+  supplier-service:
+    container_name: supplier-service
+    image: supplier-docker
+    network_mode: "host"
+
+  consumer-service:
+    container_name: consumer-service
+    image: consumer-docker
+    network_mode: "host"
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management-alpine
+    ports:
+        - 5672:5672
+        - 15672:15672
